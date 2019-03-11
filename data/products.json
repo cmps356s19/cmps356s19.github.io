@@ -1,0 +1,69 @@
+[
+  {
+    "id": 1,
+    "code": "MillingFee",
+    "name": "Milling fee per Kg",
+    "category": "Service",
+    "unitPrice": 1.5
+  },
+  {
+    "id": 2,
+    "code": "SS001-50L",
+    "name": "50L Sansone Stainless Steel Container with Tap",
+    "category": "Container",
+    "size": "50L",
+    "type": "Stainless Steel",
+    "unitPrice": 50,
+    "qty": 500
+  },
+  {
+    "id": 3,
+    "code": "SS001-30L",
+    "name": "30L Sansone Stainless Steel Container with Tap",
+    "category": "Container",
+    "size": "30L",
+    "type": "Stainless Steel",
+    "unitPrice": 30,
+    "qty": 300
+  },
+  {
+    "id": 4,
+    "code": "SS001-10L",
+    "name": "10L Sansone Stainless Steel Container with Tap",
+    "category": "Container",
+    "size": "10L",
+    "type": "Stainless Steel",
+    "unitPrice": 10,
+    "qty": 100
+  },
+  {
+    "id": 5,
+    "code": "CR001-50L",
+    "name": "50L Ceramic Oil Container",
+    "category": "Container",
+    "size": "50L",
+    "type": "Ceramic",
+    "unitPrice": 25,
+    "qty": 250
+  },
+  {
+    "id": 6,
+    "code": "CR001-30L",
+    "name": "30L Ceramic Oil Container",
+    "category": "Container",
+    "size": "30L",
+    "type": "Ceramic",
+    "unitPrice": 15,
+    "qty": 150
+  },
+  {
+    "id": 7,
+    "code": "CR001-10L",
+    "name": "10L Ceramic Oil Container",
+    "category": "Container",
+    "size": "10L",
+    "type": "Ceramic",
+    "unitPrice": 5,
+    "qty": 50
+  }
+]
