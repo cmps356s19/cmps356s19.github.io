@@ -6,7 +6,7 @@
     "Al Rayyan", "Al Wakra", "Umm Said", "Al Khor", "Mesaieed"
   ],
   "jobStatus": [
-    "Pending", "In Progress", "Completed", "Awaiting Payment", "Paid and Collected"
+    "Pending", "In Progress", "Completed", "Awaiting Payment", "Paid and Collected", "Cancelled"
   ],
   "productCategory": [
     "Service", "Container"
