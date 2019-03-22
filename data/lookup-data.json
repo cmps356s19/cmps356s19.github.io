@@ -10,5 +10,8 @@
   ],
   "productCategory": [
     "Service", "Container"
-  ]
+  ],
+  "paymentMethod": [
+     "Cash", "Cheque", "Debit Card", "Credit Card"
+   ]
 }
