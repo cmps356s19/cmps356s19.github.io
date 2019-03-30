@@ -11,7 +11,10 @@
   "productCategory": [
     "Service", "Container"
   ],
+  "containerType": [
+    "Stainless Steel", "Pastic", "Glass", "Ceramic"
+  ],
   "paymentMethod": [
      "Cash", "Cheque", "Debit Card", "Credit Card"
-   ]
+  ]
 }
