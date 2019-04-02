@@ -10,16 +10,22 @@
     <ul class="nav navbar-nav">
         <li><a href="/index.html">Home</a></li>
         <li><a href="/hifz-form.html">Add Hifz</a></li>
-        <li><a href="/hifz.html">Hifz List</a></li>
     </ul>
 </nav>
 
-<caption for="surahType">Surah Type</caption>
-<select id="surahType">
-    <option>All</option>
-    <option value="Meccan">Meccan</option>
-    <option value="Medinan">Medinan</option>
-</select>
+<form>
+    <caption for="surahType">Surah Type</caption>
+    <select id="surahType" name="surahType">
+        <option>All</option>
+        <option value="Meccan">Meccan</option>
+        <option value="Medinan">Medinan</option>
+    </select>
+
+    <caption for="ayaCount">Aya Count</caption>
+    <input type="number" id="ayaCount" name="ayaCount" required>
+
+    <button type="submit">Search</button>
+</form>
 
 <table>
     <thead>
@@ -33,17 +39,17 @@
     </thead>
     <tbody>
         <tr>
-            <td>1</td>
-            <td>الفاتحة</td>
-            <td>Al-Fatiha</td>
-            <td>7</td>
-            <td>Meccan</td>
-        </tr>
-        <tr>
             <td>2</td>
             <td>البقرة</td>
             <td>Al-Baqara</td>
             <td>286</td>
+            <td>Medinan</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>آل عمران</td>
+            <td>Aal-e-Imran</td>
+            <td>200</td>
             <td>Medinan</td>
         </tr>
     </tbody>

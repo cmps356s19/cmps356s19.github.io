@@ -1,8 +1,16 @@
 [
   {
     "surah": "Al-Fatiha",
+    "student": "Ali",
     "fromAya": 1,
     "toAya": 7,
     "masteryLevel": 5
+  },
+  {
+    "surah": "Al-Baqara",
+    "student": "Khaled",
+    "fromAya": 1,
+    "toAya": 25,
+    "masteryLevel": 4
   }
 ]
