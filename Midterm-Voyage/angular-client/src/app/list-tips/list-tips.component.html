@@ -1,0 +1,33 @@
+<div class="page-header"><h1>List trips</h1></div>
+
+<table *ngIf="trips" id="tripsTable" class="table table-striped table-bordered dataTable" name="trip">
+  <thead>
+  <tr>
+    <th>Country</th>
+    <th>From Date</th>
+    <th>To Date</th>
+    <th>Estimated Budget</th>
+    <th>Trip type</th>
+    <th>Trip Date</th>
+    <th>Rating</th>
+    <th>Status</th>
+
+  </tr>
+  </thead>
+  <tbody>
+
+  <tr *ngFor="let trip of trips">
+    <td  class="courseName">{{trip.countryName}}</td>
+    <td class="taskType">{{prettifyDate(trip.fromDate)}}</td>
+    <td class="title">{{prettifyDate(trip.toDate)}}</td>
+    <td class="dueDate">{{trip.estimatedBudget}} QR</td>
+    <td class="effortHours">{{trip.tripType}}</td>
+    <td class="weight">{{prettifyDate(trip.tripDate)}}</td>
+    <td class="weight">{{trip.rating}}</td>
+    <td>
+      <button class="btn btn-sm btn-primary" (click)="completeTrip(trip)" *ngIf="trip.tripDate == null">Complete</button>
+    </td>
+
+  </tr>
+  </tbody>
+</table>

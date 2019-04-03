@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Trip</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<h3>Add Trip</h3>
+<form>
+    <label for="country">Country</label>
+    <select id="country" name="country" required>
+        <option></option>
+        <option value="Qatar">Qatar</option>
+        <option value="France">France</option>
+        <option value="Morocco">Morocco</option>
+    </select>
+
+    <label for="tripType">Trip Type</label>
+    <select id="tripType" name="tripType" required>
+        <option></option>
+        <option value="Leisure">Leisure</option>
+        <option value="Business">Business</option>
+    </select>
+
+    <label for="fromDate">From Date</label>
+    <input type="date" id="fromDate" name="fromDate" required>
+
+    <label for="toDate">To Date</label>
+    <input type="date" id="toDate" name="toDate" required>
+
+    <label for="rating">Rating</label>
+    <select id="rating" name="rating" required>
+        <option></option>
+        <option value="5">Excellent</option>
+        <option value="4">Very Good</option>
+        <option value="3">Good</option>
+        <option value="2">Fair</option>
+        <option value="1">Poor</option>
+    </select>
+
+    <button type="Submit">Submit</button>
+</form>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<div class="page-header"><h1>Add trip</h1></div>
+
+<form #theForm="ngForm" (ngSubmit)="addTrip(theForm)">
+
+  <div class="form-group">
+    <div class="form-inline">
+      <label class="control-label">Country name</label>
+      <select #selectedValue class="form-control" *ngIf="countries"
+              name="countryName" id="country" ngModel>
+        <option *ngFor="let country of countries" value="{{country.name}}">
+          {{country.name}}
+        </option>
+      </select>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="form-inline">
+      <label>From Date</label>
+      <input type="date" id="fromDate" name="fromDate" ngModel required  >
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="form-inline">
+      <label>To Date</label>
+      <input type="date" id="toDate" name="toDate" ngModel required  >
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="form-inline">
+      <label>Estimated budget</label>
+      <input type="number" class="form-control" name="estimatedBudget" id="estimatedBudget" placeholder="budget.." ngModel required>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="form-inline">
+      <label class="control-label">Trip Type</label>
+      <select #selectedValue1 class="form-control" name="tripType" id="tripType" ngModel>
+        <option value="Buisness"> Buisness</option>
+        <option value="Leisure"> Leisure</option>
+        <option value="Family"> Family</option>
+      </select>
+    </div>
+  </div>
+
+  <button type="submit" [disabled]="!theForm.valid" class="btn btn-success">Submit trip</button>
+</form>

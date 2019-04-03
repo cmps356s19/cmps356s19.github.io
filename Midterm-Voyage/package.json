@@ -1,0 +1,20 @@
+{
+  "name": "final-exam",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "body-parser": "~1.15.2",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.2.0",
+    "express": "~4.14.0",
+    "fs-promise": "^2.0.3",
+    "hbs": "~4.0.1",
+    "mongoose": "^4.9.8",
+    "mongoose-unique-validator": "^1.0.5",
+    "morgan": "~1.7.0",
+    "node-fetch": "^1.6.3",
+    "serve-favicon": "~2.3.0"
+  }
+}
+
+
