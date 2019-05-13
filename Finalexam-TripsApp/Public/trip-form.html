@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Trip</title>
+    <link rel="stylesheet" href="css/styles.css">
+
+    <script>
+        document.addEventListener("DOMContentLoaded", async () => {
+            await fillCountriesDD()
+        });
+
+        async function getCountries() {
+            const url = 'http://localhost:8090/api/countries/';
+            const response = await fetch(url);
+            return response.json();
+        }
+
+        async function fillCountriesDD() {
+            try {
+                const countries = await getCountries();
+                document.querySelector('#country').innerHTML +=
+                    `${countries.map(country => countryToHtmlOption(country)).join('')}`;
+
+            } catch (e) {
+                console.log(e);
+            }
+        }
+
+        function countryToHtmlOption(country) {
+            return `<option  value='${country.name}'>
+                ${country.name}
+             </option>`;
+        }
+
+        async function handleAddtrip(event) {
+            try {
+                const form = event.target.form;
+                const isFormValid = form.checkValidity();
+                if (!isFormValid) return;
+
+                event.preventDefault();
+
+                const trip = formToObject(form);
+                console.log('trip', trip);
+                await fetch('http://localhost:8090/api/trips',
+                    {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': "application/json",
+                        },
+                        body: JSON.stringify(trip)
+                    });
+                window.location.href = 'index.html'
+            } catch (e) {
+                console.log(e);
+            }
+        }
+
+        function formToObject(form) {
+            // Construct key/value pairs representing form fields and their values,
+            const formData = new FormData(form);
+            let formObject = {};
+
+            // Convert key/value pairs to an object
+            formData.forEach((value, key) => {
+                formObject[key] = value;
+            });
+
+            return formObject;
+        }
+    </script>
+</head>
+<body>
+<h3>Add Trip</h3>
+<form>
+    <label for="country">Country</label>
+    <select id="country" name="country" required>
+        <option></option>
+    </select>
+
+    <label for="tripType">Trip Type</label>
+    <select id="tripType" name="tripType" required>
+        <option></option>
+        <option value="Leisure">Leisure</option>
+        <option value="Business">Business</option>
+    </select>
+
+    <label for="fromDate">From Date</label>
+    <input type="date" id="fromDate" name="fromDate" required>
+
+    <label for="toDate">To Date</label>
+    <input type="date" id="toDate" name="toDate" required>
+
+    <label for="rating">Rating</label>
+    <select id="rating" name="rating" required>
+        <option></option>
+        <option value="5">Excellent</option>
+        <option value="4">Very Good</option>
+        <option value="3">Good</option>
+        <option value="2">Fair</option>
+        <option value="1">Poor</option>
+    </select>
+
+    <button type="Submit"  onclick="handleAddtrip(event)">Submit</button>
+</form>
+
+</body>
+</html>

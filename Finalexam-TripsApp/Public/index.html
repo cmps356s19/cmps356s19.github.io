@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Trips App</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script>
+        async function handleLoadCountry(code) {
+            try {
+                const country = await getCountry(code);
+                document.querySelector('tbody').innerHTML = countryToHTMLRow(country);
+            } catch (e) {
+                console.log(e);
+            }
+        }
+
+        async function getCountry(code) {
+            const url = `http://localhost:8090/api/countries/${code}`;
+            const response = await fetch(url);
+            return response.json();
+        }
+
+        async function getCountries(continent) {
+            let url = 'http://localhost:8090/api/countries/';
+            if (continent) {
+                url = `${url}?continent=${continent}`;
+            }
+            const response = await fetch(url);
+            return response.json();
+        }
+
+
+        function countryToHTMLRow(country) {
+            return `
+                <tr id="row-${country.code}">
+                    <td>${country.code}</td>
+                    <td>${country.name}</td>
+                    <td>${country.capital}</td>
+                    <td>${country.population}</td>
+                    <td><img src="${country.flag}"</td>
+                 </tr>
+            `
+        }
+
+
+        async function fillCountriesDD(continent) {
+            try {
+                const countries = await getCountries(continent);
+                document.querySelector('#country').innerHTML = '<option value=""></option>';
+                document.querySelector('#country').innerHTML +=
+                    `${countries.map(country => countryToHtmlOption(country)).join('')}`;
+            } catch (e) {
+                console.log(e);
+            }
+        }
+
+        function countryToHtmlOption(country) {
+            return `<option  value='${country.code}'>
+                ${country.name}
+             </option>`;
+        }
+    </script>
+</head>
+<body>
+<nav>
+    <ul class="nav navbar-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="trip-form.html">Add Trip</a></li>
+    </ul>
+</nav>
+
+<label for="continent" >Continent:</label>
+<select id="continent" onchange="fillCountriesDD(this.value)">
+    <option value=""></option>
+    <option value="Africa">Africa</option>
+    <option value="Americas">Americas</option>
+    <option value="Asia">Asia</option>
+    <option value="Europe">Europe</option>
+    <option value="Oceania">Oceania</option>
+</select>
+
+<label for="country">Country:</label>
+<select id="country"onchange="handleLoadCountry(this.value)">
+</select>
+
+<table>
+    <thead>
+        <tr>
+            <th>Code</th>
+            <th>Name</th>
+            <th>Capital</th>
+            <th>Population</th>
+            <th>Flag</th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,16 @@
+[
+  {
+    "country": "France",
+    "tripType": "Leisure",
+    "fromDate": "2019-05-01",
+    "toDate": "2019-05-07",
+    "rating": 5
+  },
+  {
+    "country": "Italy",
+    "tripType": "Leisure",
+    "fromDate": "2019-04-22",
+    "toDate": "2019-05-2",
+    "rating": 4
+  }
+]
